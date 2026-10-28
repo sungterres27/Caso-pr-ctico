@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 
-# 1. Clase Abstracta y Encapsulamiento
+# Clase Abstracta y Encapsulamiento
 class Matricula(ABC):
     def __init__(self, monto_base=60.0):
         self.__monto_base = monto_base  # Atributo privado
@@ -12,7 +12,7 @@ class Matricula(ABC):
     def calcular_monto(self):
         pass
 
-# 2. Herencia Simple
+# Herencia Simple
 class MatriculaGeneral(Matricula):
     def calcular_monto(self):
         return self.get_monto_base()
@@ -32,10 +32,10 @@ class MatriculaBeca(MatriculaGeneral):
         monto_previo = super().calcular_monto()
         return monto_previo / 2.0
 
-# 3. Herencia Múltiple - Programador 1
+# Herencia Múltiple - Programador 1
 class MatriculaCombinadaProg1(MatriculaBeca, MatriculaDesaprobado, MatriculaExtemporanea):
     pass
-
-# 3. Herencia Múltiple - Programador 2
+    
+# Herencia Múltiple - Programador 2
 class MatriculaCombinadaProg2(MatriculaDesaprobado, MatriculaExtemporanea, MatriculaBeca):
     pass
